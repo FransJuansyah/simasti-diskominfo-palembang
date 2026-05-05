@@ -1,0 +1,104 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1E40AF;
+  --primary-light: #3B82F6;
+  --primary-soft: #EFF6FF;
+  --primary-mid: #DBEAFE;
+  --accent: #0EA5E9;
+  --green: #059669;
+  --green-soft: #ECFDF5;
+  --amber: #D97706;
+  --amber-soft: #FFFBEB;
+  --red: #DC2626;
+  --red-soft: #FEF2F2;
+  --purple: #7C3AED;
+  --purple-soft: #F5F3FF;
+
+  --bg: #F1F5F9;
+  --surface: #FFFFFF;
+  --surface2: #F8FAFC;
+  --border: #E2E8F0;
+  --border2: #CBD5E1;
+
+  --t1: #0F172A;
+  --t2: #334155;
+  --t3: #64748B;
+  --t4: #94A3B8;
+
+  --font: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.05);
+  --r: 12px;
+  --r-sm: 8px;
+  --r-lg: 16px;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--t1);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 99px; }
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Status badges */
+.badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 99px; }
+.badge-active   { background: var(--green-soft);  color: var(--green); }
+.badge-inactive { background: #F1F5F9; color: var(--t3); }
+.badge-broken   { background: var(--red-soft);   color: var(--red); }
+.badge-loan     { background: var(--amber-soft);  color: var(--amber); }
+.badge-service  { background: var(--purple-soft); color: var(--purple); }
+.badge-done     { background: var(--green-soft);  color: var(--green); }
+.badge-pending  { background: var(--amber-soft);  color: var(--amber); }
+.badge-progress { background: var(--primary-soft);color: var(--primary); }
+
+/* Animations */
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.fade-up   { animation: fadeUp 0.35s ease both; }
+.delay-1   { animation-delay: 0.05s; }
+.delay-2   { animation-delay: 0.10s; }
+.delay-3   { animation-delay: 0.15s; }
+.delay-4   { animation-delay: 0.20s; }
+.delay-5   { animation-delay: 0.25s; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; }
+thead tr { background: var(--surface2); }
+th { font-size: 11px; font-weight: 700; color: var(--t3); text-transform: uppercase; letter-spacing: 0.06em; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+td { font-size: 13px; color: var(--t2); padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+tbody tr:hover { background: var(--surface2); }
+tbody tr:last-child td { border-bottom: none; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: var(--r-sm); font-size: 13px; font-weight: 700; cursor: pointer; border: none; font-family: var(--font); transition: all 0.15s; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: #1D3FAA; }
+.btn-outline { background: transparent; color: var(--t2); border: 1px solid var(--border2); }
+.btn-outline:hover { background: var(--surface2); }
+.btn-danger { background: var(--red-soft); color: var(--red); }
+.btn-danger:hover { background: #FEE2E2; }
+.btn-sm { padding: 6px 12px; font-size: 12px; }
+
+/* Input */
+.input { width: 100%; padding: 10px 14px; border-radius: var(--r-sm); border: 1.5px solid var(--border); background: var(--surface); color: var(--t1); font-size: 13px; font-family: var(--font); outline: none; transition: border-color 0.2s; }
+.input:focus { border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+.input::placeholder { color: var(--t4); }
+.label { font-size: 12px; font-weight: 700; color: var(--t2); margin-bottom: 6px; display: block; }
+
+/* Section title */
+.section-title { font-size: 16px; font-weight: 800; color: var(--t1); }
+.section-sub { font-size: 13px; color: var(--t3); margin-top: 2px; font-weight: 500; }
